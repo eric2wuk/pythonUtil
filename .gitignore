@@ -1,0 +1,6 @@
+*.iml
+*.xml
+.idea/inspectionProfiles/
+Include/
+__pycache__/
+testdir3/

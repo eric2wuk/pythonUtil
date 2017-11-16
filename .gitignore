@@ -4,3 +4,5 @@
 Include/
 __pycache__/
 testdir3/
+Lib/
+Scripts/

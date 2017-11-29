@@ -9,13 +9,23 @@ task_queue =queue.Queue()
 # 接受结果的队列:
 result_queue = queue.Queue()
 
+def return_task_queue():
+    global task_queue
+    return task_queue
+def return_result_queue():
+    global result_queue
+    return result_queue
+
+
 # 从BaseManager继承的QueueMananger:
 class QueueManager(BaseManager):
     pass
 
 # 把两个Queue都注册到网络上, callable参数关联了Queue对象:
-QueueManager.register('get_task_queue', callable=lambda: task_queue)
-QueueManager.register('get_result_queue', callable=lambda: result_queue)
+# QueueManager.register('get_task_queue', callable=lambda: task_queue)
+# QueueManager.register('get_result_queue', callable=lambda: result_queue)
+QueueManager.register('get_task_queue', callable=return_task_queue)
+QueueManager.register('get_result_queue', callable=return_result_queue)
 
 # 绑定端口5000, 设置验证码'abc'
 manager = QueueManager(address=('', 5000), authkey=b'abc')

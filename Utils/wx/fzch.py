@@ -1,6 +1,5 @@
 # coding:utf-8
 import itchat
-from itchat.content import TEXT
 from itchat.content import *
 # import sys, importlib
 import time
@@ -88,8 +87,9 @@ def handle_receive_msg(msg):
     print
     msg['MsgId']
     if msg['Type'] == 'Text' or msg['Type'] == 'Friends':  # 如果发送的消息是文本或者好友推荐
+        actualNickName = msg['ActualNickName']
         msg_content = msg['Text']
-        print(msg_content)
+        print(actualNickName,msg_content)
 
 
     # 如果发送的消息是附件、视屏、图片、语音

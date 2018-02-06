@@ -1,6 +1,6 @@
 import unittest
 
-from mydict import Dict
+from my_basic.mydict import Dict
 
 
 class TestDict(unittest.TestCase):

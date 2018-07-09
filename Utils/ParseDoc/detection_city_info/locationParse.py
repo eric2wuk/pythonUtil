@@ -3,7 +3,7 @@ resultList = None
 d1 ={};
 d2 ={};
 
-with open('locationInfo.txt', 'r', encoding='utf-8') as f:
+with open('city_info.npp', 'r', encoding='utf-8') as f:
     resultList = f.readlines();
     for line in resultList:
         d1[line.split("	")[0]]={'cityName':line.split("	")[0],'position':line.split("	")[1].replace('\n','')}

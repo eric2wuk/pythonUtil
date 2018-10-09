@@ -10,7 +10,7 @@ with open('orderno.md', 'r', encoding='utf-8') as f:
     list = resultList[0].split();
     for i in range(len(list)):
         # str = '"%s0" ,' %(list[i][0:31])
-        str = "detectionList.add(\"%s\");" %(list[i][0:32])
+        str = "orderNos.add(\"%s\");" %(list[i][0:32])
         print(str);
 
 
